@@ -89,4 +89,5 @@ let total = numeros.reduce ((acumulador, numero) => acumulador + numero);
      
    let stock = productos.reduce((acumulador, cantidad) => acumulador + cantidad, 0);                                                                              //una vez hecho, el resultado de esta suma es el nuevo valor de acumulador
                                                                      
+   
 console.log(stock);

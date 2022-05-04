@@ -84,10 +84,26 @@ const productos = [
 //----------------------------------------------------------------------------------
 //esta funcion de ejemplo suma la cantidad de prendas que tenemos en stock
 //---------------------------------------------------------------------------------
-const numeros = [ 2, 5, 64, 23, 58, 74];
-let total = numeros.reduce ((acumulador, numero) => acumulador + numero);
+
+
+
+
+
+
+
+
+
+
+const animales = [
+      {tipo: "perros", cantidad: 74},
+      {tipo: "gatos", cantidad: 5},
+      {tipo: "pajaros", cantidad: 10},
+      {tipo: "peces", cantidad: 20},
+    ];
+    
+let totalAnimales = animales.reduce ((acumulador, cantidad) => acumulador + cantidad);
      
    let stock = productos.reduce((acumulador, cantidad) => acumulador + cantidad, 0);                                                                              //una vez hecho, el resultado de esta suma es el nuevo valor de acumulador
                                                                      
 
-console.log(total);
+console.log(totalAnimales);

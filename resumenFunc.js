@@ -86,24 +86,11 @@ const productos = [
 //---------------------------------------------------------------------------------
 
 
+//let stock = productos.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);                                                           
+
+ //console.log(stock);
 
 
-
-
-
-
-
-
-const animales = [
-      {tipo: "perros", cantidad: 74},
-      {tipo: "gatos", cantidad: 5},
-      {tipo: "pajaros", cantidad: 10},
-      {tipo: "peces", cantidad: 20},
-    ];
-    
-let totalAnimales = animales.reduce ((acumulador, cantidad) => acumulador + cantidad);
-     
-   let stock = productos.reduce((acumulador, cantidad) => acumulador + cantidad, 0);                                                                              //una vez hecho, el resultado de esta suma es el nuevo valor de acumulador
-                                                                     
-
-console.log(totalAnimales);
+ const sumaStock = ((acumulador, producto) => acumulador + producto.cantidad);
+ const stock = productos.reduce (sumaStock,0);
+ console.log(stock);

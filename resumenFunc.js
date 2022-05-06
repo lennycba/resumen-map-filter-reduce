@@ -83,14 +83,30 @@ const productos = [
                         //FUNCION .REDUCE
 //----------------------------------------------------------------------------------
 //esta funcion de ejemplo suma la cantidad de prendas que tenemos en stock
-//---------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+ //reduce recibe como parametro un acumulador y un indicador de cada elemento del
+ // en este caso PRODUCTO no está declarado dentro del array PRODUCTOS, pero hace referencia
+ //a cada objeto dentro del grupo de productos.
+ //despues del arrow function (=>) se le indica como es que la funcion va a reducir,
+ //en este caso, tomando la cantidad de stock de cada producto y sumandola al acumulador
+ //como si fuera un bucle for, tenemos que inicializar el acumulador... el 0 despues de
+ //producto.cantidad le indica al acumulador en que numero inicializar
+ //podemos no colocar el 0, en este caso la funcion inicializara el acumulador
+ //con el calor del primer elemento del array, pero cuidado con esta forma de sintaxis
+ //porque puede generar un error si recibe un array vacío
+
+//let stock = productos.reduce((acumulador, producto) => acumulador + producto.cantidad,0);                                                         
+//console.log(stock);
+
+//----------------------------------------------------------------------------------
+//tambien podemos dividir el .reduce en dos para que quede mas claro y funcionará igualmente
+//----------------------------------------------------------------------------------
+
+// const sumaStock = ((acumulador, producto) => acumulador + producto.cantidad);    //en este caso creamos la funcion sumaStock y le asignamos la operación 
+// const stock = productos.reduce (sumaStock,0);                                    //luego usamos la función sumaStock como argumento en la función reduce
+// console.log(stock);                                                              //y no nos olvidamos de inicializar el contador en 0
 
 
-//let stock = productos.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);                                                           
-
- //console.log(stock);
-
-
- const sumaStock = ((acumulador, producto) => acumulador + producto.cantidad);
- const stock = productos.reduce (sumaStock,0);
- console.log(stock);
+//NOTA: hay muchas, muchas, muchisimas otras formas en las que podemos usar las funciones MAP FILTER REDUCE (inclusive podemos usar conbinaciones de estas)
+//estos son solo algunos ejemplos para entender como funcionan en sus usos mas comunes.....
+//espero que les haya servido, para mi fue un gusto hacer este resumen
